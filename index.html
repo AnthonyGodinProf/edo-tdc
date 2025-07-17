@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Infographie TDC / Dyspraxie</title>
+   <!-- Tailwind CSS CDN -->
+   <script src="https://cdn.tailwindcss.com"></script>
+   <style>
+       /* Custom font for a more professional look */
+       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+       body {
+           font-family: 'Inter', sans-serif;
+           background-color: #f0f4f8; /* Light blue-gray background */
+       }
+       /* Custom scrollbar for a cleaner look */
+       ::-webkit-scrollbar {
+           width: 8px;
+       }
+       ::-webkit-scrollbar-track {
+           background: #e2e8f0;
+           border-radius: 10px;
+       }
+       ::-webkit-scrollbar-thumb {
+           background: #94a3b8;
+           border-radius: 10px;
+       }
+       ::-webkit-scrollbar-thumb:hover {
+           background: #64748b;
+       }
+   </style>
+</head>
+<body class="p-4 md:p-8 lg:p-12 min-h-screen flex items-center justify-center">
+   <div class="max-w-4xl mx-auto bg-white shadow-xl rounded-2xl overflow-hidden">
+       <!-- Header Section -->
+       <header class="bg-gradient-to-r from-blue-600 to-indigo-700 p-6 md:p-8 text-white text-center rounded-t-2xl">
+           <h1 class="text-3xl md:text-4xl font-extrabold mb-2">Trouble Développemental de la Coordination (TDC / Dyspraxie)</h1>
+           <p class="text-lg md:text-xl font-light">Fiche pédagogique pour formateurs BPJEPS</p>
+       </header>
+
+
+       <!-- Main Content Area -->
+       <main class="p-6 md:p-8 lg:p-10">
+           <!-- Section A: Définition générale -->
+           <div class="mb-6 bg-blue-50 p-4 rounded-lg shadow-sm border border-blue-200">
+               <h2 class="text-xl md:text-2xl font-bold text-blue-800 cursor-pointer flex justify-between items-center" onclick="toggleSection('definition')">
+                   A. Définition générale
+                   <span id="icon-definition" class="transform transition-transform duration-300 rotate-0">▼</span>
+               </h2>
+               <div id="content-definition" class="mt-3 text-gray-700 leading-relaxed hidden">
+                   <p>Le Trouble Développemental de la Coordination (TDC), anciennement appelé dyspraxie, est un trouble neurodéveloppemental affectant l'acquisition et l'automatisation des gestes volontaires. Il se traduit par une difficulté persistante à coordonner les mouvements fins et/ou globaux, sans qu’une cause neurologique ou sensorielle ne l’explique. Le TDC impacte les activités scolaires, sportives et de la vie quotidienne.</p>
+               </div>
+           </div>
+
+
+           <!-- Section B: Critères spécifiques -->
+           <div class="mb-6 bg-green-50 p-4 rounded-lg shadow-sm border border-green-200">
+               <h2 class="text-xl md:text-2xl font-bold text-green-800 cursor-pointer flex justify-between items-center" onclick="toggleSection('criteres')">
+                   B. Critères spécifiques
+                   <span id="icon-criteres" class="transform transition-transform duration-300 rotate-0">▼</span>
+               </h2>
+               <div id="content-criteres" class="mt-3 text-gray-700 leading-relaxed hidden">
+                   <p>Le TDC est défini par :</p>
+                   <ul class="list-disc list-inside ml-4 mt-2 space-y-1">
+                       <li>Une altération significative du développement de la coordination motrice.</li>
+                       <li>Une interférence avec les activités scolaires, sportives, de loisirs ou de la vie quotidienne.</li>
+                       <li>Une apparition dès l’enfance, sans autre trouble neurologique ou intellectuel majeur pour l’expliquer.</li>
+                   </ul>
+               </div>
+           </div>
+
+
+           <!-- Section C: Impacts en formation – phases de groupe -->
+           <div class="mb-6 bg-yellow-50 p-4 rounded-lg shadow-sm border border-yellow-200">
+               <h2 class="text-xl md:text-2xl font-bold text-yellow-800 cursor-pointer flex justify-between items-center" onclick="toggleSection('impacts-formation')">
+                   C. Impacts dans les apprentissages en formation – phases de groupe
+                   <span id="icon-impacts-formation" class="transform transition-transform duration-300 rotate-0">▼</span>
+               </h2>
+               <div id="content-impacts-formation" class="mt-3 text-gray-700 leading-relaxed hidden">
+                   <ul class="list-disc list-inside ml-4 mt-2 space-y-1">
+                       <li>Difficultés à copier, écrire rapidement ou manipuler des objets scolaires.</li>
+                       <li>Fatigabilité accrue lors des prises de notes ou des tâches manuelles prolongées.</li>
+                       <li>Retards d’exécution pouvant être mal perçus comme du désengagement.</li>
+                       <li>Difficulté à suivre des démonstrations motrices complexes.</li>
+                   </ul>
+               </div>
+           </div>
+
+
+           <!-- Section D: Impacts en autonomie à la maison -->
+           <div class="mb-6 bg-red-50 p-4 rounded-lg shadow-sm border border-red-200">
+               <h2 class="text-xl md:text-2xl font-bold text-red-800 cursor-pointer flex justify-between items-center" onclick="toggleSection('impacts-autonomie')">
+                   D. Impacts dans les apprentissages en autonomie à la maison
+                   <span id="icon-impacts-autonomie" class="transform transition-transform duration-300 rotate-0">▼</span>
+               </h2>
+               <div id="content-autonomie" class="mt-3 text-gray-700 leading-relaxed hidden">
+                   <ul class="list-disc list-inside ml-4 mt-2 space-y-1">
+                       <li>Tâches scolaires plus longues et épuisantes (écriture, devoirs pratiques).</li>
+                       <li>Difficulté à organiser son espace de travail, à manipuler des outils.</li>
+                       <li>Besoin d’outils numériques pour compenser (clavier, dictée vocale, supports audio-visuels).</li>
+                       <li>Faible confiance en soi liée aux échecs répétés dans les tâches techniques.</li>
+                   </ul>
+               </div>
+           </div>
+
+
+           <!-- Section E: Impacts en séances de mise en activité (simulations sportives) -->
+           <div class="mb-6 bg-purple-50 p-4 rounded-lg shadow-sm border border-purple-200">
+               <h2 class="text-xl md:text-2xl font-bold text-purple-800 cursor-pointer flex justify-between items-center" onclick="toggleSection('impacts-sportives')">
+                   E. Impacts dans les apprentissages en séances de mise en activité (simulations sportives)
+                   <span id="icon-impacts-sportives" class="transform transition-transform duration-300 rotate-0">▼</span>
+               </h2>
+               <div id="content-sportives" class="mt-3 text-gray-700 leading-relaxed hidden">
+                   <ul class="list-disc list-inside ml-4 mt-2 space-y-1">
+                       <li>Difficultés de coordination motrice : gestes imprécis, maladresse, lenteur.</li>
+                       <li>Apprentissage moteur ralenti : besoin de répétitions, d'étapes intermédiaires.</li>
+                       <li>Gêne dans les activités collectives : peur de l’échec ou de l’exposition publique.</li>
+                       <li>Problèmes d’orientation spatiale ou de coordination œil-main.</li>
+                   </ul>
+               </div>
+           </div>
+
+
+           <!-- Section F: Impacts en séances menées sur le terrain auprès des enfants -->
+           <div class="mb-6 bg-teal-50 p-4 rounded-lg shadow-sm border border-teal-200">
+               <h2 class="text-xl md:text-2xl font-bold text-teal-800 cursor-pointer flex justify-between items-center" onclick="toggleSection('impacts-terrain')">
+                   F. Impacts dans les apprentissages en séances menées sur le terrain auprès des enfants
+                   <span id="icon-impacts-terrain" class="transform transition-transform duration-300 rotate-0">▼</span>
+               </h2>
+               <div id="content-terrain" class="mt-3 text-gray-700 leading-relaxed hidden">
+                   <ul class="list-disc list-inside ml-4 mt-2 space-y-1">
+                       <li>Difficulté à montrer un geste correctement ou à guider un groupe par le mouvement.</li>
+                       <li>Besoin de temps pour organiser l’espace ou démontrer une activité.</li>
+                       <li>Inconfort possible avec la manipulation de matériel sportif ou pédagogique.</li>
+                       <li>Peut se sentir en difficulté dans une posture de “modèle corporel” si non accompagné.</li>
+                   </ul>
+               </div>
+           </div>
+
+
+           <!-- Section À retenir pour les formateurs -->
+           <div class="bg-indigo-50 p-4 rounded-lg shadow-sm border border-indigo-200">
+               <h2 class="text-xl md:text-2xl font-bold text-indigo-800 cursor-pointer flex justify-between items-center" onclick="toggleSection('a-retenir')">
+                   À retenir pour les formateurs
+                   <span id="icon-a-retenir" class="transform transition-transform duration-300 rotate-0">▼</span>
+               </h2>
+               <div id="content-a-retenir" class="mt-3 text-gray-700 leading-relaxed hidden">
+                   <ul class="list-disc list-inside ml-4 mt-2 space-y-1">
+                       <li>Le TDC est un trouble invisible mais impactant fortement les tâches motrices et organisationnelles.</li>
+                       <li>Il ne traduit ni un manque de volonté, ni une déficience intellectuelle.</li>
+                       <li>Le soutien passe par la déculpabilisation, l’adaptation des tâches et l’accès à des outils compensatoires.</li>
+                   </ul>
+               </div>
+           </div>
+
+
+           <!-- Section pour les ressources supplémentaires -->
+           <div class="mt-8 p-4 bg-gray-100 rounded-lg shadow-sm border border-gray-300 text-center">
+               <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-3">Ressources Supplémentaires</h2>
+               <p class="text-gray-700 mb-4">Pour en savoir plus sur le Trouble Développemental de la Coordination (TDC), vous pouvez consulter les ressources suivantes :</p>
+               <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4 mb-6">
+                   <a href="https://www.youtube.com/watch?v=rFVfoV2V11k" target="_blank" class="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 w-full md:w-auto">
+                       Regarder la vidéo sur le TDC
+                   </a>
+                   <a href="https://www.identidys.com/single-project" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 w-full md:w-auto">
+                       Consulter le Manuel Identidys (Repérage Spatial)
+                   </a>
+                   <a href="https://www.institutta.com/s-informer/trouble-developpemental-coordination" target="_blank" class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 w-full md:w-auto">
+                       Pour aller plus loin (Institutta)
+                   </a>
+                   <!-- New button for the podcast -->
+                   <a href="https://drive.google.com/file/d/1dRFq20SqxfG4si68s7XxM_-MNnYLx6Os/view?usp=drive_link" target="_blank" class="inline-block bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 w-full md:w-auto">
+                       Écouter le podcast sur le TDC
+                   </a>
+               </div>
+
+
+               <h3 class="text-lg md:text-xl font-semibold text-gray-700 mb-3">Aperçu des impacts du TDC sur le mouvement :</h3>
+               <img src="https://www.institutta.com/api/assets/ita/0779b7b6-c72b-4747-9fe0-eb957949d974/impact-tdc-mouvement.png"
+                    alt="Image des impacts du TDC sur le mouvement"
+                    class="mx-auto rounded-lg shadow-md max-w-full h-auto mb-4"
+                    onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/333333?text=Image+non+disponible';"
+               >
+               <a href="https://www.institutta.com/api/assets/ita/0779b7b6-c72b-4747-9fe0-eb957949d974/impact-tdc-mouvement.png" target="_blank" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 w-full md:w-auto">
+                   Voir l'image en taille réelle
+               </a>
+           </div>
+       </main>
+   </div>
+
+
+   <script>
+       /**
+        * Toggles the visibility of a content section and rotates its icon.
+        * @param {string} sectionId - The ID of the section to toggle (e.g., 'definition').
+        */
+       function toggleSection(sectionId) {
+           const content = document.getElementById(`content-${sectionId}`);
+           const icon = document.getElementById(`icon-${sectionId}`);
+
+
+           // If the content ID is not directly matching, try to find it by replacing 'impacts-'
+           let actualContentId = `content-${sectionId}`;
+           if (!content) {
+               if (sectionId === 'impacts-autonomie') actualContentId = 'content-autonomie';
+               else if (sectionId === 'impacts-sportives') actualContentId = 'content-sportives';
+               else if (sectionId === 'impacts-terrain') actualContentId = 'content-terrain';
+           }
+           const actualContent = document.getElementById(actualContentId);
+
+
+           if (actualContent.classList.contains('hidden')) {
+               // Show the content
+               actualContent.classList.remove('hidden');
+               actualContent.classList.add('block'); // Use block to ensure it takes up space
+               icon.classList.remove('rotate-0');
+               icon.classList.add('rotate-180'); // Rotate icon upwards
+           } else {
+               // Hide the content
+               actualContent.classList.remove('block');
+               actualContent.classList.add('hidden');
+               icon.classList.remove('rotate-180');
+               icon.classList.add('rotate-0'); // Rotate icon downwards
+           }
+       }
+   </script>
+</body>
+</html>
